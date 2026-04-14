@@ -12,7 +12,7 @@ export default function Practice() {
   const [session, setSession] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/decks/${deckId}/due`).then((res) => {
+    axios.get(`https://braino-pilu.onrender.com/api/decks/${deckId}/due`).then((res) => {
       if (res.data.length === 0) setDone(true);
       else setCards(res.data);
     });
@@ -20,7 +20,7 @@ export default function Practice() {
 
   const handleRating = async (rating) => {
     await axios.patch(
-      `http://localhost:5000/api/decks/cards/${cards[index]._id}/review`,
+      `https://braino-pilu.onrender.com/api/decks/cards/${cards[index]._id}/review`,
       { rating },
     );
 

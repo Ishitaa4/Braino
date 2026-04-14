@@ -13,7 +13,7 @@ export default function UploadDeck({ onUpload }) {
     const formData = new FormData();
     formData.append("pdf", file);
     try {
-      const res = await axios.post("http://localhost:5000/api/decks/upload", formData);
+      const res = await axios.post("https://braino-pilu.onrender.com/api/decks/upload", formData);
       setMessage(`✅ Created ${res.data.cardCount} cards from "${res.data.deck.title}"`);
       onUpload();
     } catch (err) {

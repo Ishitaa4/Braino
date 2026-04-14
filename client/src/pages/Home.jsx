@@ -10,15 +10,15 @@ export default function Home() {
   const navigate = useNavigate();
 
   const fetchDecks = async () => {
-    const res = await axios.get("http://localhost:5000/api/decks");
+    const res = await axios.get("https://braino-pilu.onrender.com/api/decks");
     setDecks(res.data);
 
     const statsObj = {};
     await Promise.all(
       res.data.map(async (deck) => {
         const [cardsRes, dueRes] = await Promise.all([
-          axios.get(`http://localhost:5000/api/decks/${deck._id}/cards`),
-          axios.get(`http://localhost:5000/api/decks/${deck._id}/due`),
+          axios.get(`https://braino-pilu.onrender.com/api/decks/${deck._id}/cards`),
+          axios.get(`https://braino-pilu.onrender.com/api/decks/${deck._id}/due`),
         ]);
         const all = cardsRes.data;
         const mastered = all.filter((c) => c.mastered).length;
@@ -34,7 +34,7 @@ export default function Home() {
   };
 
   const deleteDeck = async (deckId) => {
-    await axios.delete(`http://localhost:5000/api/decks/${deckId}`);
+    await axios.delete(`https://braino-pilu.onrender.com/api/decks/${deckId}`);
     fetchDecks();
   };
 
