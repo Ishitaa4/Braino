@@ -54,7 +54,7 @@ ${text}`
     res.status(500).json({ error: err.message });
   }
 });
-r
+
 router.get('/', async (req, res) => {
   const decks = await Deck.find().sort({ createdAt: -1 });
   res.json(decks);
@@ -74,7 +74,7 @@ router.get('/:deckId/due', async (req, res) => {
   });
   res.json(cards);
 });
-outer.patch('/cards/:cardId/review', async (req, res) => {
+router.patch('/cards/:cardId/review', async (req, res) => {
   const { rating } = req.body;
   const card = await Card.findById(req.params.cardId);
 
