@@ -2,7 +2,7 @@
 
 > A flashcard app that turns any PDF into a smart, spaced-repetition study deck powered by LLaMA 3.3 via Groq.
 
-**Live Demo:** [coming soon]  
+**Live Demo:** https://flashcard-kappa-snowy.vercel.app/ 
 **Built by:** Ishita Chowdhury  
 
 ---
