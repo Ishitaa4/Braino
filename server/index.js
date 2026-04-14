@@ -8,7 +8,7 @@ app.use(cors());
 
 
 app.use(cors({
-  origin: "https://your-vercel-url.vercel.app"
+  origin: "https://flashcard-kappa-snowy.vercel.app"
 }));
 app.use(express.json());
 
