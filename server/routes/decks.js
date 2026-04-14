@@ -71,7 +71,7 @@ router.get('/:deckId/due', async (req, res) => {
   const cards = await Card.find({
     deckId: req.params.deckId,
     nextReview: { $lte: new Date() }
-  });
+  }).sort({ easeFactor: 1 }); 
   res.json(cards);
 });
 router.patch('/cards/:cardId/review', async (req, res) => {
