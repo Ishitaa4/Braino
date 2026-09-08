@@ -17,7 +17,7 @@ router.post('/upload', upload.single('pdf'), async (req, res) => {
     const text = pdfData.text.slice(0, 8000);
 
     const message = await client.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+      model: 'openai/gpt-oss-20b',
       max_tokens: 2000,
       messages: [{
         role: 'user',
